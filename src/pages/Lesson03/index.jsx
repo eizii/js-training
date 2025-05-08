@@ -4,7 +4,8 @@ import Chart from "../../components/Chart03";
 import instruction from "./instruction.md?raw";
 
 const convertData = (input) => {
-  return []; // ここを作りましょう！
+  return input.filter(index => index.gender === "男性");
+  //return []; // ここを作りましょう！
 };
 
 const Lesson = () => {

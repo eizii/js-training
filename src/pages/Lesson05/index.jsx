@@ -4,8 +4,22 @@ import Chart from "../../components/Chart05";
 import instruction from "./instruction.md?raw";
 
 const convertData = (input) => {
-  return []; // ここを作りましょう！
-};
+  const count = {};
+  input.forEach(input =>{
+    const height = Math.round(data.y);
+    if(!count[height]){
+      count[height] = {男性:0,女性:0};
+    }
+    count[height][data.gender]+=1;
+  });
+
+  count.sort((a,b) => (a-b));
+  count.map((height)=>({
+    bin:height,
+    男性:count[height].男性,
+    女性:count[height].女性,
+  }));
+}
 
 const Lesson = () => {
   return (
